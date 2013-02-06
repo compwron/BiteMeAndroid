@@ -9,4 +9,7 @@ before_install:
   - ls -l android-sdk-linux
   - ls -l android-sdk-linux/platforms
   - ls -l android-sdk-linux/tools
+  - ls -l android-sdk-linux/tools/lib
+  - cat android-sdk-linux/tools/adb_has_moved.txt
   - android update sdk --filter 1,2,6 --no-ui --force
+
