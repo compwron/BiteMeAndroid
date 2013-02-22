@@ -3,4 +3,11 @@ target
 # Package Files #
 *.jar
 *.war
+.idea
+*.iml
 *.ear
+classes
+gen
+screenshot_0.png
+test_servers
+.DS_Store
