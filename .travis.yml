@@ -8,13 +8,13 @@ before_install:
   - export ANDROID_HOME=~/build/BiteMoi/BiteMeAndroid/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   - android update sdk --filter platform-tools,android-16,extra-android-support,android-17,sysimg-17 --no-ui --force
-  - echo no | android create avd -n emulator10DE -t android-10 --skin WVGA800 --force --abi armeabi
+  - echo no | android create avd -n emulator -t android-16 --skin WVGA800 --force --abi armeabi-v7a
   - gem install calabash-android
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start 
-  - emulator -avd emulator10DE -prop persist.sys.language=en -prop persist.sys.country=US -noaudio -no-boot-anim &
+  - emulator -avd emulator -prop persist.sys.language=en -prop persist.sys.country=US -noaudio -no-boot-anim &
   - sleep 45
 script:
   - mvn install
