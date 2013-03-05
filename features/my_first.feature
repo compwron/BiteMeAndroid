@@ -1,4 +1,6 @@
 Feature: Login feature
 
   Scenario: Application start up
-    Then I see "Hello bitemoi!"
+    Given I see "Hello bitemoi!"
+    When I press "Location"
+    Then I see "Location" 
