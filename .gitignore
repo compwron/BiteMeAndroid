@@ -11,3 +11,8 @@ gen
 screenshot_0.png
 test_servers
 .DS_Store
+bin
+.classpath
+.metadata/
+.project
+.settings/
