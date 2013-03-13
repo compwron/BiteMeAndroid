@@ -8,4 +8,7 @@
     <string name="consumer.secret">IEax9DGQDbPLTdk5tWWIj06FzJ8</string>
     <string name="token.key">q6KmlMOuh-QEp3pXOPhkSox5TqjRI7Xh</string>
     <string name="token.secret">Vhsrc45UAGL3NuVmDRDjFMKu08w</string>
+    <string name="go_button">GO</string>
+    <string name="search_box">search</string>
+    <string name="results_indicator">results ...</string>
 </resources>
