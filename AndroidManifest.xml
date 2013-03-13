@@ -15,6 +15,7 @@
       </intent-filter>
     </activity>
     <activity android:name=".LocationActivity"></activity>
+    <activity android:name=".YelpSearchActivity"></activity>
   </application>
 
 </manifest>

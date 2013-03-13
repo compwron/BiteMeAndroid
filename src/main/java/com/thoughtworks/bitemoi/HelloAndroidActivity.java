@@ -30,7 +30,14 @@ public class HelloAndroidActivity extends Activity {
                 startActivityForResult(myIntent, 0);
             }
         });
+
+
         
+    }
+
+    public void yelpSearch(View view) {
+        Intent intent = new Intent(this, YelpSearchActivity.class);
+        startActivity(intent);
     }
 
 }

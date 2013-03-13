@@ -3,4 +3,9 @@
     <string name="hello">Hello bitemoi!</string>
     <string name="app_name">bitemoi</string>
     <string name="location">Location</string>
+    <string name="foodSearch">Search</string>
+    <string name="consumer.key">z6UnbYAtLlT_OYHwHmz1hg</string>
+    <string name="consumer.secret">IEax9DGQDbPLTdk5tWWIj06FzJ8</string>
+    <string name="token.key">q6KmlMOuh-QEp3pXOPhkSox5TqjRI7Xh</string>
+    <string name="token.secret">Vhsrc45UAGL3NuVmDRDjFMKu08w</string>
 </resources>
