@@ -1,6 +1,6 @@
 Feature: Login feature
 
-  Scenario: Application start up
+  Scenario: Navigate to Location page
     Given I see "Hello bitemoi!"
     When I press "Location"
     Then I see "Location"
