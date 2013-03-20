@@ -11,4 +11,5 @@
     <string name="go_button">GO</string>
     <string name="search_box">search</string>
     <string name="results_indicator">results ...</string>
+    <string name="menu_settings">Settings</string>
 </resources>
