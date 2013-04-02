@@ -10,17 +10,7 @@ before_install:
   - android update sdk --filter platform-tools,android-16,extra-android-support,android-17,sysimg-17,extra-google-google_play_services --no-ui --force
   - mkdir ~/build/GmsMvn
   - git clone --depth=100 --branch=master git://github.com/JakeWharton/gms-mvn-install.git ~/build/GmsMvn
-  - ls ~/build/GmsMvn
-  - ls ~/build
-  - ls ~/build/BiteMoi
-  - ls ~/build/BiteMoi/BiteMoiAndroid
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras/google
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras/google/google_play_services
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras/google/google_play_services/libproject
-  - ls ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib
-  - cp ~/build/GmsMvn/gms-mvn-install.sh ~/build/BiteMoi/BiteMoiAndroid/android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ 
+  - cp ~/build/GmsMvn/gms-mvn-install.sh ~/build/BiteMoi/BiteMeAndroid/android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ 
   - cd ~/build/BiteMoi/BiteMeAndroid/android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ 
   - ./gms-mvn-install.sh
   - cd ~/build/BiteMoi/BiteMeAndroid
