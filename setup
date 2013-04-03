@@ -4,7 +4,7 @@ set -e
 
 PROJECT_ROOT="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)"
 VENDOR_DIRECTORY=$PROJECT_ROOT/vendor
-ANDROID_SDK_ARTIFACT=android-sdk_r21.1-macosx.zip
+ANDROID_SDK_ARTIFACT=android-sdk_r21.0.1-macosx.zip
 ANDROID_SDK_DIRECTORY=$VENDOR_DIRECTORY/android-sdk-macosx
 
 cd $PROJECT_ROOT
