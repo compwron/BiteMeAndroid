@@ -1,11 +1,5 @@
 *.class
 target
-# Package Files #
-*.jar
-*.war
-.idea
-*.iml
-*.ear
 classes
 gen
 screenshot_0.png
@@ -16,3 +10,16 @@ bin
 .metadata/
 .project
 .settings/
+
+# Package Files #
+*.jar
+*.war
+.idea
+*.iml
+*.ear
+
+# IDE Files #
+*.iml
+*.ipr
+*.iws
+.idea
