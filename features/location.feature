@@ -7,4 +7,4 @@ Feature: Login feature
     Then I see "Location"
     
     When I go back
-    Given I see "Hello bitemoi!"
+    Then I see "Hello bitemoi!"

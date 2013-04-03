@@ -1,15 +1,8 @@
+# Generated Sources #
 *.class
 target
 classes
 gen
-screenshot_0.png
-test_servers
-.DS_Store
-bin
-.classpath
-.metadata/
-.project
-.settings/
 
 # Package Files #
 *.jar
@@ -23,3 +16,16 @@ bin
 *.ipr
 *.iws
 .idea
+.project
+.classpath
+.metadata/
+.settings/
+
+# Miscellaneous #
+screenshot_0.png
+.DS_Store
+bin
+test_servers
+
+# SDK #
+vendor/android-sdk-macosx
