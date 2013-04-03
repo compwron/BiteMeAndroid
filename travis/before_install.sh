@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-PROJECT_ROOT="`dirname \"$0\"`"
+PROJECT_ROOT="../`dirname \"$0\"`"
 
 sudo apt-get update -qq
 if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
