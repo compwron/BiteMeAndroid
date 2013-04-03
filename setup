@@ -17,7 +17,7 @@ export ANDROID_HOME=$ANDROID_SDK_DIRECTORY
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services
 
-cp vendor/GmsMvn/gms-mvn-install.sh $ANDROID_SDK_DIRECTORY/extras/google/google_play_services/libproject/google-play-services_lib/
+cp vendor/gms-mvn/gms-mvn-install.sh $ANDROID_SDK_DIRECTORY/extras/google/google_play_services/libproject/google-play-services_lib/
 cd $ANDROID_SDK_DIRECTORY/extras/google/google_play_services/libproject/google-play-services_lib/
 ./gms-mvn-install.sh
 cd $PROJECT_ROOT

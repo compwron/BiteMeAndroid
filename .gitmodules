@@ -1,3 +1,3 @@
-[submodule "vendor/GmsMvn"]
-	path = vendor/GmsMvn
+[submodule "vendor/gms-mvn"]
+	path = vendor/gms-mvn
 	url = git://github.com/JakeWharton/gms-mvn-install.git
