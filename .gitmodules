@@ -1,0 +1,3 @@
+[submodule "build/GmsMvn"]
+	path = build/GmsMvn
+	url = git://github.com/JakeWharton/gms-mvn-install.git
