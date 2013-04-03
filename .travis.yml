@@ -1,27 +1,8 @@
 language: java
 jdk: oraclejdk7
 before_install:
-  - sudo apt-get update -qq
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
-  - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
-  - tar -xzf android-sdk_r21.0.1-linux.tgz
-  - export ANDROID_HOME=~/build/BiteMoi/BiteMeAndroid/android-sdk-linux
-  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-  - android update sdk --filter platform-tools,android-16,extra-android-support,android-17,sysimg-17,extra-google-google_play_services --no-ui --force
-  - cp vendor/GmsMvn/gms-mvn-install.sh android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ 
-  - (cd android-sdk-linux/extras/google/google_play_services/libproject/google-play-services_lib/ && ./gms-mvn-install.sh)
-  - echo no | android create avd -n emulator -t android-17 --skin WVGA800 --force --abi armeabi-v7a
-  - gem install calabash-android
+  travis/before_install.sh
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start 
-  - emulator -avd emulator -prop persist.sys.language=en -prop persist.sys.country=US -noaudio -no-boot-anim &
-  - sleep 45
+  travis/before_script.sh
 script:
-  - mvn install
-  - adb kill-server
-  - adb start-server
-  - adb devices
-  - adb install -r target/bitemoi-1.0-SNAPSHOT.apk
-  - calabash-android run target/bitemoi-1.0-SNAPSHOT.apk
+  travis/script.sh
