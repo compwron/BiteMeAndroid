@@ -3,13 +3,11 @@ package com.thoughtworks.bitemoi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 public class HelloAndroidActivity extends Activity {
 
-    private static String TAG = "bitemoi";
+//    private static String TAG = "bitemoi";
 
     /**
      * Called when the activity is first created.
@@ -20,25 +18,17 @@ public class HelloAndroidActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		Log.i(TAG, "onCreate");
         setContentView(R.layout.main);
-        
-        Button location = (Button) findViewById(R.id.location);
-        location.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), LocationActivity.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-
-
-        
+    }
+    
+    public void locationService(View view){
+    	  Intent locationIntent = new Intent(view.getContext(), LocationActivity.class);
+          startActivityForResult(locationIntent, 0);
     }
 
     public void yelpSearch(View view) {
         Intent intent = new Intent(this, YelpSearchActivity.class);
         startActivity(intent);
     }
-
 }
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.thoughtworks.bitemoi" android:versionCode="1" android:versionName="1.0-SNAPSHOT">
+  package="com.thoughtworks.bitemoi" android:versionCode="1" android:versionName="1.0">
 
-  <uses-sdk android:minSdkVersion="8"
-            android:targetSdkVersion="16" />
+  <uses-sdk android:minSdkVersion="15"
+            android:targetSdkVersion="17" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="com.thoughtworks.bitemoi.permission.MAPS_RECEIVE"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -35,7 +35,7 @@
     <activity android:name=".LocationActivity"></activity>
     <activity android:name=".YelpSearchActivity"></activity>
 	
-	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAEh4v2ZU1tUgvAKilZdrVVL-qOHpZtjt8" />
+	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDXHJXzjSv7X3r_BATFRfv9bfjB_lG6gns" />
 
   </application>
  
