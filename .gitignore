@@ -1,4 +1,5 @@
 # Generated Sources #
+gen-external-apklibs
 *.class
 target
 classes
