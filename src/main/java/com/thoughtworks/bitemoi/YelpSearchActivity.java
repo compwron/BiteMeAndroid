@@ -3,67 +3,77 @@ package com.thoughtworks.bitemoi;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ListView;
 import com.thoughtworks.yelp.service.proxies.YelpProxy;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class YelpSearchActivity extends Activity {
 
-    private TextView mSearchResultsText;
+	private ListView mSearchResultsText;
 
-    @Override
-    public void onCreate(Bundle b){
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        super.onCreate(b);
-        setContentView(R.layout.search);
-        setTitle("Food search");
-    }
+	@Override
+	public void onCreate(Bundle b) {
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+		super.onCreate(b);
+		setContentView(R.layout.search);
+		setTitle("Food search");
+	}
 
-    private String processJson(String jsonStuff) throws JSONException {
-        JSONObject json = new JSONObject(jsonStuff);
-        JSONArray businesses = json.getJSONArray("businesses");
-        ArrayList<String> businessNames = new ArrayList<String>(businesses.length());
-        for (int i = 0; i < businesses.length(); i++) {
-            JSONObject business = businesses.getJSONObject(i);
-            businessNames.add(business.getString("name"));
-        }
-        return TextUtils.join("\n", businessNames);
-    }
+	private List<String> processJson(String jsonStuff) throws JSONException {
+		JSONObject json = new JSONObject(jsonStuff);
+		JSONArray businesses = json.getJSONArray("businesses");
+		ArrayList<String> businessNames = new ArrayList<String>(
+				businesses.length());
+		for (int i = 0; i < businesses.length(); i++) {
+			JSONObject business = businesses.getJSONObject(i);
+			businessNames.add(business.getString("name"));
+		}
 
-    public void searchForRestaurant(View v)  {
+		// return TextUtils.join("\n", businessNames);
+		return businessNames;
+	}
 
-        EditText searchKey = (EditText)findViewById(R.id.search);
-        final String val = searchKey.getText().toString();
-        mSearchResultsText = (TextView)findViewById(R.id.searchResult);
+	public void searchForRestaurant(View v) {
 
-        setProgressBarIndeterminateVisibility(true);
-        new AsyncTask<Void, Void, String>() {
-            @Override
-            protected String doInBackground(Void... params) {
-                YelpProxy yelp = YelpProxy.getYelp(YelpSearchActivity.this);
-                String businesses = yelp.search(val, 37.788022, -122.399797);
-                try {
-                    return processJson(businesses);
-                } catch (JSONException e) {
-                    return businesses;
-                }
-            }
-            @Override
-            protected void onPostExecute(String result) {
-                mSearchResultsText.setText(result);
-                setProgressBarIndeterminateVisibility(false);
-            }
-        }.execute();
+		EditText searchKey = (EditText) findViewById(R.id.search);
+		final String val = searchKey.getText().toString();
+		mSearchResultsText = (ListView) findViewById(R.id.searchResult);
 
-    }
+		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1);
+		mSearchResultsText.setAdapter(adapter);
+
+		adapter.add("It works!!!!");
+
+		setProgressBarIndeterminateVisibility(true);
+		new AsyncTask<Void, Void, List<String>>() {
+			@Override
+			protected List<String> doInBackground(Void... params) {
+				YelpProxy yelp = YelpProxy.getYelp(YelpSearchActivity.this);
+				String businesses = yelp.search(val, 37.788022, -122.399797);
+				try {
+					return processJson(businesses);
+				} catch (JSONException e) {
+					return null;
+				}
+			}
+
+			@Override
+			protected void onPostExecute(List<String> result) {
+				adapter.addAll(result);
+				setProgressBarIndeterminateVisibility(false);
+			}
+		}.execute();
+
+	}
 
 }
