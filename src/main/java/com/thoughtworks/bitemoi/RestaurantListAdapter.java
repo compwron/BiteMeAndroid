@@ -8,13 +8,19 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 public class RestaurantListAdapter extends BaseAdapter {
-    private int count;
     private final Context applicationContext;
+    private int count;
     private final List<Restaurant> restaurants;
 
     public RestaurantListAdapter(Context applicationContext, List<Restaurant> restaurants) {
         this.applicationContext = applicationContext;
         this.restaurants = restaurants;
+    }
+
+    public RestaurantListAdapter(YelpSearchActivity applicationContext, int simple_list_item_1) {
+        //To change body of created methods use File | Settings | File Templates.
+        restaurants = null;
+        this.applicationContext = null;
     }
 
     @Override
@@ -35,5 +41,9 @@ public class RestaurantListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         return null;
+    }
+
+    public void addAll(List<String> result) {
+        //To change body of created methods use File | Settings | File Templates.
     }
 }

@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import com.thoughtworks.yelp.service.proxies.YelpProxy;
@@ -45,11 +44,8 @@ public class YelpSearchActivity extends Activity {
 		final String val = searchKey.getText().toString();
 		mSearchResultsText = (ListView) findViewById(R.id.searchResult);
 
-		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1);
+		final RestaurantListAdapter adapter = new RestaurantListAdapter(this, android.R.layout.simple_list_item_1);
 		mSearchResultsText.setAdapter(adapter);
-
-        adapter.add("It works!!!!");
 
 		setProgressBarIndeterminateVisibility(true);
 		new AsyncTask<Void, Void, List<String>>() {
