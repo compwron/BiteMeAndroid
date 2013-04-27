@@ -3,19 +3,19 @@ package com.thoughtworks.bitemoi;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.UiSettings;
+//
+//import com.google.android.gms.maps.GoogleMap;
+//import com.google.android.gms.maps.MapFragment;
+//import com.google.android.gms.maps.UiSettings;
 
 public class LocationActivity extends Activity {
-
-	private GoogleMap map;
-	private UiSettings uiSettings;
+//
+//	private GoogleMap map;
+//	private UiSettings uiSettings;
 
 	/**
 	 * Called when the activity is first created.
-	 * 
+	 *
 	 * @param savedInstanceState
 	 *            If the activity is being re-initialized after previously being
 	 *            shut down then this Bundle contains the data it most recently
@@ -30,18 +30,18 @@ public class LocationActivity extends Activity {
 	}
 
 	private void setUpMapIfNeeded() {
-		if (map == null) {
-			map = ((MapFragment) getFragmentManager()
-					.findFragmentById(R.id.map)).getMap();
-			if (map != null) {
-				setUpMap();
-			}
-		}
+//		if (map == null) {
+//			map = ((MapFragment) getFragmentManager()
+//					.findFragmentById(R.id.map)).getMap();
+//			if (map != null) {
+//				setUpMap();
+//			}
+//		}
 	}
 
 	private void setUpMap() {
-		uiSettings = map.getUiSettings();
-		map.setMyLocationEnabled(true);
+//		uiSettings = map.getUiSettings();
+//		map.setMyLocationEnabled(true);
 	}
 
 	@Override

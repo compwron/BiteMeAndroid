@@ -28,10 +28,12 @@ public class YelpSearchActivity extends Activity {
         setTitle("Food search");
     }
 
-    private String processJson(String jsonStuff) throws JSONException {
+    protected String processJson(String jsonStuff) throws JSONException {
         JSONObject json = new JSONObject(jsonStuff);
         JSONArray businesses = json.getJSONArray("businesses");
         ArrayList<String> businessNames = new ArrayList<String>(businesses.length());
+//        ListView resultView = (ListView) findViewById(12);
+//        resultView.setAdapter(SimpleAdapter);
         for (int i = 0; i < businesses.length(); i++) {
             JSONObject business = businesses.getJSONObject(i);
             businessNames.add(business.getString("name"));
