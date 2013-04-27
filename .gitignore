@@ -3,7 +3,11 @@ gen-external-apklibs
 *.class
 target
 classes
+project.properties
 gen
+
+# Targets #
+out
 
 # Package Files #
 *.jar
